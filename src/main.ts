@@ -5,9 +5,10 @@ import path from 'path';
 import { imageSettings } from './interfaces/ImageSettings.interface';
 
 // VARS
-const userId: string = '391948300451971083';
-const itemsPerPage: number = 50;
-const pages: number = 18;
+const cmdArgs = process.argv.slice(2);
+const userId: string = cmdArgs[0] || '391948300451971083';
+const itemsPerPage: number = parseInt(cmdArgs[1] || '50');
+const pages: number = parseInt(cmdArgs[2] || '1');
 const baseUrl: string = 'https://api.feverdreams.app/userfeed'
 
 // FUNCTIONS
